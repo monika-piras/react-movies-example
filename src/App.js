@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CardList from './CardList';
@@ -30,25 +30,29 @@ class App extends Component {
   }
 
   onSearchChange = (event) => {
-    this.setState({searchField: event.target.value})
-    const filteredMovies = this.state.movies.filter(movie => {
-      return movie.name.toLowerCase().includes(this.state.searchField.toLowerCase())
-    })
-    console.log(filteredMovies);
+    this.setState({ searchField: event.target.value })
+
   }
 
   render() {
-    const { movies } = this.state;
-    return (
-      <div className="App">
-        <h1>ReactMoviesApp</h1>
-        <SearchBox searchChange={this.onSearchChange}/>
-        <CardList movies={this.state.movies} />
-      </div>
-    );
+    const filteredMovies = this.state.movies.filter(movie => {
+      return movie.name.toLowerCase().includes(this.state.searchField.toLowerCase())
+    })
+    if (this.state.movies.length === 0) {
+      return <h1>Loading</h1>
+    } else {
+      return (
+        <div className="App">
+          <h1>ReactMoviesApp</h1>
+          <SearchBox searchChange={this.onSearchChange} />
+          <CardList movies={filteredMovies} />
+        </div>
+      );
+    }
+
   }
 
- 
+
 
 
 }
