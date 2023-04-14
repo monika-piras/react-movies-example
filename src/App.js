@@ -3,15 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
+import SearchList from './SearchList';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <h1>ReactMoviesApp</h1>
-//       <Card id = {movies[0].id} name = {movies[0].name}/>
-//     </div>
-//   );
-// }
 
 
 class App extends Component {
@@ -19,6 +12,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
+      searchListMovies: [],
       searchField: ''
     }
   }
@@ -30,30 +24,33 @@ class App extends Component {
   }
 
   onSearchChange = (event) => {
-    this.setState({ searchField: event.target.value })
-
+    this.setState({ searchField: event.target.value });
+    fetch(`https://api.tvmaze.com/search/shows?q=${event.target.value}`)
+      .then(response => response.json())
+      .then(items => { this.setState({ searchListMovies: items }) });
   }
+
 
   render() {
-    const filteredMovies = this.state.movies.filter(movie => {
-      return movie.name.toLowerCase().includes(this.state.searchField.toLowerCase())
-    })
+
     if (this.state.movies.length === 0) {
       return <h1>Loading</h1>
-    } else {
-      return (
-        <div className="App">
-          <h1>ReactMoviesApp</h1>
-          <SearchBox searchChange={this.onSearchChange} />
-          <CardList movies={filteredMovies} />
-        </div>
-      );
     }
+    return (
+      <div className="App">
+        <h1>ReactMoviesApp</h1>
+
+        <SearchBox searchChange={this.onSearchChange} />
+
+        <SearchList searchListMovies={this.state.searchListMovies} />
+
+        <CardList movies={this.state.movies} />
+
+      </div>
+    );
+
 
   }
-
-
-
-
 }
+
 export default App;
