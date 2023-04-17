@@ -1,13 +1,15 @@
 import React from 'react';
+import {DebounceInput} from 'react-debounce-input';
 
-
-const SearchBox = ({searchField, searchChange}) => {
+const SearchBox = ({searchChange}) => {
  return (
     <div className='pa2'>
-        <input
+        <DebounceInput
             className='pa3 ba b--green bg-lightest-blue'
             type='search'
             placeholder='search movies'
+            minLength={2}
+            debounceTimeout={500}
             onChange={searchChange}
         />
     </div>

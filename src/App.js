@@ -4,6 +4,7 @@ import './App.css';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
 import SearchList from './SearchList';
+import MovieDetails from './MovieDetails';
 
 
 
@@ -13,7 +14,8 @@ class App extends Component {
     this.state = {
       movies: [],
       searchListMovies: [],
-      searchField: ''
+      searchField: '',
+      movieDetails: 'movie details here'
     }
   }
 
@@ -39,6 +41,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>ReactMoviesApp</h1>
+        
+        <MovieDetails movie={this.state.movieDetails}/>
 
         <SearchBox searchChange={this.onSearchChange} />
 
