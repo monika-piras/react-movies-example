@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 
+
 const MovieDetail = () => {
 
   const [movie, setMovie] = useState({});
@@ -31,15 +32,18 @@ const MovieDetail = () => {
   } else {
     return (
 
-      <div className='bg-light-green dib br3 pa3 ma2 bw2 shadow-5 cardStyle'>
-
-        MOVIE DETAILS COMPONENT
-
-        <p>ID: {movie.id} </p>
-
-
-        <p>{movie.name}</p>
+      <div className='bg-light-green dib br3 pa3 ma2 bw2 shadow-5'>
+        <div className='fl mr3'>
+          <img alt='movies' src={movie.image.medium} />
+        </div>
+        <div className='pa3'>
+          <h1 className='titleStyle'>{movie.name}</h1>
+          <p className=''>{movie.summary}</p>
+          <p>Language: {movie.language}</p>
+          <h3>{movie.genres}</h3>
+        </div>
       </div>
+
     )
   }
 
