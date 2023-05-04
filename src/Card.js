@@ -14,10 +14,9 @@ const Card = ({ id, name, image }) => {
     return (
         <div className='bg-light-green dib br3 pa3 ma2 bw2 shadow-5 cardStyle'>
 
-            <img alt='movies' src={image} className='imgStyle' />
+            <img alt='movie' src={image} className='imgStyle' />
             <div>
                 <h2 className='titleStyle'>{name}</h2>
-                <p>{id}</p>
                 <button onClick={() => showMovieDetails(id)}>Click here</button>
             </div>
         </div>
