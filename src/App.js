@@ -39,7 +39,6 @@ class App extends Component {
       <div className="App">
         <h1>ReactMoviesApp</h1>
 
-
         <SearchBox searchChange={this.onSearchChange} />
 
         <SearchList searchListMovies={this.state.searchListMovies} />
@@ -48,7 +47,6 @@ class App extends Component {
 
       </div>
     );
-
 
   }
 }
