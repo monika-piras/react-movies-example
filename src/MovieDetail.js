@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import './MovieDetail.css';
+import FooterComponent from './FooterComponent';
 
 const MovieDetail = () => {
   const [movie, setMovie] = useState({});
@@ -43,8 +45,8 @@ const MovieDetail = () => {
       const actors = movie._embedded.cast;
       const renderList = actors.map((item, index) => {
         return (
-          <div key={index} className='dib'>
-            <img alt='movie' src={item.person.image?.medium} />
+          <div key={index} className='dit ma2 actorCardStyle'>
+            <img alt='movie poster' src={item.person.image?.medium} />
             <h3>{item.person.name}</h3>
             <p>as: {item.character.name}</p>
             <p>{item.person.country?.name}</p>
@@ -64,13 +66,17 @@ const MovieDetail = () => {
     return (
       <div>
         <button className='ma3 pa2 bg-light-green br3' onClick={() => goBack()}>
-          <span class="material-symbols-outlined">
-            arrow_back_ios
-          </span>Go Back</button>
+          <div className='buttonStyle'>
+            <span className="material-symbols-outlined">
+              arrow_back_ios
+            </span>
+            Go Back
+          </div>
+        </button>
 
         <div className='bg-light-green dib br3 pa3 ma4 bw2 shadow-5'>
 
-          <div className='db'>
+          <div className='db movieDetailStyle'>
             <div className='fl mr3'>
               <img alt='movie' src={movie.image.medium} />
             </div>
@@ -86,6 +92,8 @@ const MovieDetail = () => {
             {rendercast()}
           </div>
         </div>
+
+        <FooterComponent />
       </div>
     )
   }
