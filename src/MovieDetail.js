@@ -74,7 +74,7 @@ const MovieDetail = () => {
           </div>
         </button>
 
-        <div className='bg-light-green dib br3 pa3 ma4 bw2 shadow-5'>
+        <div className='bg-light-green db br3 pa3 ma3 bw2 shadow-5'>
 
           <div className='db movieDetailStyle'>
             <div className='fl mr3'>

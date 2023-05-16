@@ -4,7 +4,8 @@ import './App.css';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
 import SearchList from './SearchList';
-
+import FooterComponent from './FooterComponent';
+import Scroll from './Scroll';
 
 class App extends Component {
   constructor() {
@@ -40,10 +41,16 @@ class App extends Component {
         <h1>ReactMoviesApp</h1>
 
         <SearchBox searchChange={this.onSearchChange} />
+        
+        <Scroll>
 
-        <SearchList searchListMovies={this.state.searchListMovies} />
+          <SearchList searchListMovies={this.state.searchListMovies} />
 
-        <CardList movies={this.state.movies} />
+          <CardList movies={this.state.movies} />
+
+        </Scroll>
+
+        <FooterComponent />
 
       </div>
     );
