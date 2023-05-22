@@ -7,6 +7,7 @@ import SearchList from './SearchList';
 import FooterComponent from './FooterComponent';
 import Scroll from './Scroll';
 
+
 class App extends Component {
   constructor() {
     super();
@@ -15,6 +16,7 @@ class App extends Component {
       searchListMovies: [],
       searchField: ''
     }
+
   }
 
   componentDidMount() {
@@ -27,8 +29,12 @@ class App extends Component {
     this.setState({ searchField: event.target.value });
     fetch(`https://api.tvmaze.com/search/shows?q=${event.target.value}`)
       .then(response => response.json())
-      .then(items => { this.setState({ searchListMovies: items }) });
+      .then(items => {
+        this.setState({ searchListMovies: items });
+        document.querySelector('.ScrollStyle').scrollTo(0, 0);
+      });
   }
+
 
 
   render() {
@@ -41,7 +47,7 @@ class App extends Component {
         <h1>ReactMoviesApp</h1>
 
         <SearchBox searchChange={this.onSearchChange} />
-        
+
         <Scroll>
 
           <SearchList searchListMovies={this.state.searchListMovies} />

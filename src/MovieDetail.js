@@ -65,7 +65,11 @@ const MovieDetail = () => {
 
     return (
       <div>
-        <button className='ma3 pa2 bg-light-green br3' onClick={() => goBack()}>
+        <div className='tc'>
+          <h1>Movie Detail</h1>
+        </div>
+
+        <button className='ma2 pa2 bg-light-green br3' onClick={() => goBack()}>
           <div className='buttonStyle'>
             <span className="material-symbols-outlined">
               arrow_back_ios
@@ -75,7 +79,6 @@ const MovieDetail = () => {
         </button>
 
         <div className='bg-light-green db br3 pa3 ma3 bw2 shadow-5'>
-
           <div className='db movieDetailStyle'>
             <div className='fl mr3'>
               <img alt='movie' src={movie.image.medium} />
