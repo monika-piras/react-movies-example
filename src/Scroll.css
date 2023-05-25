@@ -1,0 +1,11 @@
+.ScrollStyle {
+    overflow-Y: scroll;
+    border: 1px solid black;
+    height: 800px;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+.ScrollStyle::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
