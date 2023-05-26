@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
@@ -34,8 +33,6 @@ class App extends Component {
         document.querySelector('.ScrollStyle').scrollTo(0, 0);
       });
   }
-
-
 
   render() {
 

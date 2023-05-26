@@ -5,6 +5,15 @@
 .buttonStyle{
     font-size: 23px;
 }
+
 .movieDetailStyle {
     height: 315px;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .movieDetailMediaQ  {
+        margin-top: 184px;
+        margin-left: 14px;
+    }
+  }

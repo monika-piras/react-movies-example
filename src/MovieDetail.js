@@ -56,7 +56,7 @@ const MovieDetail = () => {
       );
 
       return (
-        <div className='mt5'>
+        <div className='mt5 movieDetailMediaQ'>
           <h2>Cast:</h2>
           {renderList}
         </div>
@@ -69,7 +69,7 @@ const MovieDetail = () => {
           <h1>Movie Detail</h1>
         </div>
 
-        <button className='ma2 pa2 bg-light-green br3' onClick={() => goBack()}>
+        <button className='ma2 mh3 pa2 bg-light-green br3' onClick={() => goBack()}>
           <div className='buttonStyle'>
             <span className="material-symbols-outlined">
               arrow_back_ios
