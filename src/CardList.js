@@ -3,6 +3,7 @@ import Card from './Card';
 
 
 const CardList = ({movies}) => {
+    
     return (
         <div>
             {

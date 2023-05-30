@@ -81,7 +81,7 @@ const MovieDetail = () => {
         <div className='bg-light-green db br3 pa3 ma3 bw2 shadow-5'>
           <div className='db movieDetailStyle'>
             <div className='fl mr3'>
-              <img alt='movie' src={movie.image.medium} />
+              <img alt='movie' src={movie.image.medium}  className= 'ma2'/>
             </div>
             <div className='pa3'>
               <h1>{movie.name}</h1>

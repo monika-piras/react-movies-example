@@ -5,6 +5,7 @@ import SearchBox from './SearchBox';
 import SearchList from './SearchList';
 import FooterComponent from './FooterComponent';
 import Scroll from './Scroll';
+import ErrorBoundary from './ErrorBoundary';
 
 
 class App extends Component {
@@ -48,8 +49,10 @@ class App extends Component {
         <Scroll>
 
           <SearchList searchListMovies={this.state.searchListMovies} />
-
-          <CardList movies={this.state.movies} />
+          
+          <ErrorBoundary>
+            <CardList movies={this.state.movies} />
+          </ErrorBoundary>
 
         </Scroll>
 
