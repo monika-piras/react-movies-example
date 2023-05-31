@@ -69,7 +69,7 @@ const MovieDetail = () => {
           <h1>Movie Detail</h1>
         </div>
 
-        <button className='ma2 mh3 pa2 bg-light-green br3' onClick={() => goBack()}>
+        <button className='ma2 mh3 pa2 bg-light-green br3 pointer' onClick={() => goBack()}>
           <div className='buttonStyle'>
             <span className="material-symbols-outlined">
               arrow_back_ios
@@ -81,11 +81,11 @@ const MovieDetail = () => {
         <div className='bg-light-green db br3 pa3 ma3 bw2 shadow-5'>
           <div className='db movieDetailStyle'>
             <div className='fl mr3'>
-              <img alt='movie' src={movie.image.medium}  className= 'ma2'/>
+              <img alt='movie' src={movie.image.medium} className='ma2' />
             </div>
             <div className='pa3'>
               <h1>{movie.name}</h1>
-              <p>{newStr}</p>
+              <p className='lh-copy'>{newStr}</p>
               <p>Language: {movie.language}</p>
               <h3>{movie.genres.join(', ')}</h3>
             </div>

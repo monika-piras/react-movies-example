@@ -1,8 +1,9 @@
-.actorCardStyle p{
+.actorCardStyle p {
     max-width: 200px;
     word-wrap: break-word;
 }
-.buttonStyle{
+
+.buttonStyle {
     font-size: 23px;
 }
 
@@ -12,8 +13,8 @@
 
 
 @media only screen and (max-width: 768px) {
-    .movieDetailMediaQ  {
-        margin-top: 184px;
+    .movieDetailMediaQ {
+        margin-top: 250px;
         margin-left: 14px;
     }
-  }
+}
