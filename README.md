@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# REACT MOVIES APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Online demo here: https://monika-piras.github.io/react-movies-example
 
-## Available Scripts
+This project is an example about how to build a responsive and mobile friendly app with [ReactJS] using the TvMaze REST API (https://static.tvmaze.com/apidoc/).
 
-In the project directory, you can run:
+It consists of a main movies page, an interactive global search, and detail pages.
 
-### `npm start`
+After the main component of the app is mounted, it automatically makes a call fetch to retrieve the main movies list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The global input search (SearchBox) does real time API calls for filtering the movies based on the input field.
+The SearchBox uses the Debouce Input Component to delay the user input, in order to trigger the API fetch by 500 milliseconds.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The movie detail page shows title, poster card, description, language, categories and the complete cast for each movie.
+This component updates his state (via Hooks) making a GET request to the TvMaze APis in order to retrieve the movie details.
 
-### `npm test`
+The navigation of the pages is configured with HashRouter in two routes, Home page and Moviedetail page, using ID path parameter.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+It's also present an example of error catching component (ErrorBoundary) for the CardList Component on the Home Page.
+In case of errors, a message will be prompt to the user as fallback UI.
 
-### `npm run build`
+The UI layout it is creted by using the fast and lightweight CSS library Tachyons.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Install
+```
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Run locally
+```
+npm start
+```
+### Deploy 
+```
+npm run build
+```
+If you want to change the address for a custom deployment, change it to package.json:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+"homepage": "/react-movies-example"
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+MIT
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Version
 
-## Learn More
+0.1.0
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[ReactJS]: <https://legacy.reactjs.org/>

@@ -56,7 +56,7 @@ const MovieDetail = () => {
       );
 
       return (
-        <div className='mt5 movieDetailMediaQ'>
+        <div>
           <h2>Cast:</h2>
           {renderList}
         </div>
@@ -77,11 +77,10 @@ const MovieDetail = () => {
             Go Back
           </div>
         </button>
-
-        <div className='bg-light-green db br3 pa3 ma3 bw2 shadow-5'>
-          <div className='db movieDetailStyle'>
-            <div className='fl mr3'>
-              <img alt='movie' src={movie.image.medium} className='ma2' />
+        <div className='bg-light-green flex flex-column pa3 ma3 br3 bw2 shadow-5'>
+          <div className='flex-auto flex flex-column flex-row-ns'>
+            <div>
+              <img alt='movie' src={movie.image.medium} className='ma2 mw-none' />
             </div>
             <div className='pa3'>
               <h1>{movie.name}</h1>
